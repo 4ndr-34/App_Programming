@@ -7,13 +7,13 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity(tableName = "notes")
-public class Notes implements Serializable {
+public class Notes implements  Serializable {
 
     @PrimaryKey(autoGenerate = true)
     int ID = 0;
 
     @ColumnInfo(name = "title")
-    String title = "";
+    String title ;
 
     @ColumnInfo(name = "notes")
     String notes = "";

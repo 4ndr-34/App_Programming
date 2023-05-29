@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.noteapp.models.Notes;
+import com.example.noteapp2.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

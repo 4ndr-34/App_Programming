@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.example.noteapp.adapters.NotesListAdapter;
 import com.example.noteapp.database.RoomDB;
 import com.example.noteapp.models.Notes;
+import com.example.noteapp2.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -16,15 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import androidx.cardview.widget.CardView;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.example.noteapp.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -162,7 +159,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 notes.addAll(database.mainDAO().getAll());
                 notesListAdapter.notifyDataSetChanged();
                 return true;
+
+            case R.id.delete:
+                database.mainDAO().delete(selectedNote);
+                notes.remove(selectedNote);
+                notesListAdapter.notifyDataSetChanged();
+                Toast.makeText(MainActivity.this,"Note deleted", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return false;
         }
-        return false;
+
     }
 }

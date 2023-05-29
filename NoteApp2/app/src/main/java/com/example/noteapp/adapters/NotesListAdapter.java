@@ -13,8 +13,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.noteapp.NotesClickListener;
-import com.example.noteapp.R;
+import com.example.noteapp.*;
 import com.example.noteapp.models.Notes;
+import com.example.noteapp2.R;
+
 
 import java.util.ArrayList;
 import java.util.List;
